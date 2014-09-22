@@ -8334,25 +8334,13 @@ int hdd_wlan_startup(struct device *dev )
    // Get mac addr from platform driver
    ret = wcnss_get_wlan_mac_address((char*)&mac_addr.bytes);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
    //memcpy((char*)&mac_addr.bytes, mac, 6);
-=======
+
    if (mac!=NULL)
 	   memcpy((char*)&mac_addr.bytes, mac, 6);
->>>>>>> eae8e26... Temporary fix for wifi on miui
-=======
-   if (mac!=NULL)
-	   memcpy((char*)&mac_addr.bytes, mac, 6);
->>>>>>> eae8e26... Temporary fix for wifi on miui
-=======
+
    //memcpy((char*)&mac_addr.bytes, mac, 6);
->>>>>>> parent of 4d5be64... Temporary fix for wifi on miui
-=======
-   //memcpy((char*)&mac_addr.bytes, mac, 6);
->>>>>>> parent of 4d5be64... Temporary fix for wifi on miui
 
    if ((!vos_is_macaddr_zero(&mac_addr)))
    {
