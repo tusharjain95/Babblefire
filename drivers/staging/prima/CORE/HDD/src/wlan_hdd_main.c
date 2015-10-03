@@ -8335,7 +8335,12 @@ int hdd_wlan_startup(struct device *dev )
    ret = wcnss_get_wlan_mac_address((char*)&mac_addr.bytes);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    //memcpy((char*)&mac_addr.bytes, mac, 6);
+=======
+   if (mac!=NULL)
+	   memcpy((char*)&mac_addr.bytes, mac, 6);
+>>>>>>> eae8e26... Temporary fix for wifi on miui
 =======
    if (mac!=NULL)
 	   memcpy((char*)&mac_addr.bytes, mac, 6);
