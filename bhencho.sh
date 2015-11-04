@@ -33,23 +33,23 @@ clear
 THREAD="-j12"
 KERNEL="zImage"
 DTBIMAGE="dtb"
-DEFCONFIG="cancro_user_defconfig"
+DEFCONFIG="cyanogen_cancro_defconfig"
 device="cancro"
 
 # Kernel Details
-BASE_MOSHI_VER="moshi"
-VER="v3"
-MOSHI_VER="$BASE_MOSHI_VER$VER"
+BASE_bhencho_VER="bhencho"
+VER="v1"
+BHENCHO_VER="$BASE_BHENCHO_VER$VER"
 
 # Vars
-export CROSS_COMPILE="/home/monish/arm-eabi-5.2/bin/arm-eabi-"
+export CROSS_COMPILE="/home/koala/bhenchokernel/UBERTC-arm-eabi-6.0/bin/arm-eabi-"
 export ARCH=arm
 export SUBARCH=arm
-export KBUILD_BUILD_USER="monish"
+export KBUILD_BUILD_USER="koala"
 export KBUILD_BUILD_HOST="beast"
 # Paths
 #STRIP=/toolchain-path/arm-eabi-strip
-STRIP=/home/monish/arm-eabi-5.2/bin/arm-eabi-strip
+STRIP=/home/koala/bhenchokernel/UBERTC-arm-eabi-6.0/bin/arm-eabi-strip
 KERNEL_DIR=`pwd`
 REPACK_DIR="$KERNEL_DIR/zip/kernel_zip"
 PATCH_DIR="$KERNEL_DIR/zip/kernel_zip/patch"
@@ -73,7 +73,7 @@ function make_kernel {
 
 function make_zip {
 		cd $REPACK_DIR
-		zip -r9 ~/builds/$MOSHI_F/MOSHI-$MOSHI_F-$(date +%d-%m_%H%M)-$VER.zip *
+		zip -r9 ~/builds/$BHENCHO_F/BHENCHO-$BHENCHO_F-$(date +%d-%m_%H%M)-$VER.zip *
 }
 
 function copy_modules {
@@ -89,7 +89,7 @@ echo -e "${bldred}"; echo -e "${blink_red}"; echo "$AK_VER"; echo -e "${restore}
 
 echo -e "${bldgrn}"
 echo "-----------------"
-echo "Making MOSHI Kernel:"
+echo "Making BHENCHO Kernel:"
 echo "-----------------"
 echo -e "${restore}"
 
@@ -122,7 +122,7 @@ echo -e "${bldred}"
 do
 case "$mchoice" in
 	c|C )
-		MOSHI_F="cancro"
+		BHENCHO_F="cancro"
 		echo
 		echo "Named cancro"
 		break
@@ -183,11 +183,11 @@ done
 ;;
 esac
 echo -e "${bldgrn}"
-echo "MOSHI-$MOSHI_F-$(date +%d-%m_%H%M)-$VER.zip"
+echo "BHENCHO-$BHENCHO_F-$(date +%d-%m_%H%M)-$VER.zip"
 echo -e "${bldred}"
 echo "################################################################################"
 echo -e "${bldgrn}"
-echo "------------------------Moshi Kernel Compiled in:-------------------------------"
+echo "------------------------Bhencho Kernel Compiled in:-------------------------------"
 echo -e "${bldred}"
 echo "################################################################################"
 echo -e "${restore}"
