@@ -27,13 +27,11 @@
 #include <linux/cpumask.h>
 #include <linux/sched.h>
 #include <linux/suspend.h>
-#include <linux/stuxnet.h>
 #include <linux/clk.h>
 #include <linux/err.h>
 #include <linux/platform_device.h>
 #include <trace/events/power.h>
 #include <mach/socinfo.h>
-#include <mach/cpufreq.h>
 
 #include "acpuclock.h"
 

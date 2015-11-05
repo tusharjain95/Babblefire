@@ -38,7 +38,7 @@ device="cancro"
 
 # Kernel Details
 BASE_babblefire_VER="babblefire"
-VER="v1"
+VER="v2"
 BABBLEFIRE_VER="$BASE_BABBLEFIRE_VER$VER"
 
 # Vars
