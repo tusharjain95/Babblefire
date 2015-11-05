@@ -8337,6 +8337,7 @@ int hdd_wlan_startup(struct device *dev )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //memcpy((char*)&mac_addr.bytes, mac, 6);
 =======
    if (mac!=NULL)
@@ -8346,6 +8347,9 @@ int hdd_wlan_startup(struct device *dev )
    if (mac!=NULL)
 	   memcpy((char*)&mac_addr.bytes, mac, 6);
 >>>>>>> eae8e26... Temporary fix for wifi on miui
+=======
+   //memcpy((char*)&mac_addr.bytes, mac, 6);
+>>>>>>> parent of 4d5be64... Temporary fix for wifi on miui
 =======
    //memcpy((char*)&mac_addr.bytes, mac, 6);
 >>>>>>> parent of 4d5be64... Temporary fix for wifi on miui
