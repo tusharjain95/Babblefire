@@ -102,12 +102,15 @@ int cpufreq_frequency_table_target(struct cpufreq_policy *policy,
 		.index = ~0,
 		.frequency = 0,
 	};
-	unsigned int i;
+	unsigned int i, diff;
 
 	pr_debug("request for target %u kHz (relation: %u) for cpu %u\n",
 					target_freq, relation, policy->cpu);
 
 	switch (relation) {
+	case CPUFREQ_RELATION_C:
+		optimal.frequency = ~0;
+		break;
 	case CPUFREQ_RELATION_H:
 		suboptimal.frequency = ~0;
 		break;
@@ -123,6 +126,15 @@ int cpufreq_frequency_table_target(struct cpufreq_policy *policy,
 		if ((freq < policy->min) || (freq > policy->max))
 			continue;
 		switch (relation) {
+		case CPUFREQ_RELATION_C:
+			diff = abs(freq - target_freq);
+			if (diff < optimal.frequency ||
+			    (diff == optimal.frequency &&
+			     freq > table[optimal.index].frequency)) {
+				optimal.frequency = diff;
+				optimal.index = i; 
+                        } 
+                        break; 
 		case CPUFREQ_RELATION_H:
 			if (freq <= target_freq) {
 				if (freq >= optimal.frequency) {

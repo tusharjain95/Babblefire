@@ -8334,9 +8334,13 @@ int hdd_wlan_startup(struct device *dev )
    // Get mac addr from platform driver
    ret = wcnss_get_wlan_mac_address((char*)&mac_addr.bytes);
 
+
    //memcpy((char*)&mac_addr.bytes, mac, 6);
 
-   if ((!vos_is_macaddr_zero(&mac_addr)))
+   if (mac!=NULL)
+	   memcpy((char*)&mac_addr.bytes, mac, 6);
+
+    if ((!vos_is_macaddr_zero(&mac_addr)))
    {
       /* Store the mac addr for first interface */
       pHddCtx->cfg_ini->intfMacAddr[0] = mac_addr;

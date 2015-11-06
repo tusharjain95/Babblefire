@@ -285,7 +285,6 @@ static unsigned int choose_freq(
 
 		if (freq > prevfreq) {
 			/* The previous frequency is too low. */
-			freqmin = prevfreq;
 
 			if (freq >= freqmax) {
 				/*
